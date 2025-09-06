@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqq8akf745hl4"]
 
-[ext_resource type="Script" uid="uid://drvbvff5r3ixy" path="res://control.gd" id="2_0e48y"]
-[ext_resource type="Theme" uid="uid://8ny1dhhq5cek" path="res://node_2d.tres" id="2_epypp"]
+[ext_resource type="Theme" uid="uid://8ny1dhhq5cek" path="res://node_2d.tres" id="1_i8d6x"]
+[ext_resource type="Script" uid="uid://drvbvff5r3ixy" path="res://control.gd" id="2_bs510"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,7 +26,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("2_epypp")
+theme = ExtResource("1_i8d6x")
 theme_type_variation = &"HeaderLarge"
 text = "\"\""
 horizontal_alignment = 1
@@ -113,6 +113,15 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "0/9"
 
+[node name="Control2" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"
+
 [node name="Control3" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -120,4 +129,4 @@ size_flags_vertical = 3
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("2_0e48y")
+script = ExtResource("2_bs510")

@@ -3,6 +3,7 @@ extends Control
 
 @onready var verb_selector: OptionButton = %VerbSelector
 @onready var reset_btn: Button = %ResetButton
+@onready var back_btn: Button = %BackButton
 @onready var score_label: Label = %ScoreLabel
 @onready var feedback_label: Label = %FeedbackLabel
 @onready var pronouns_box: GridContainer = %Pronouns
@@ -92,6 +93,7 @@ func _ready() -> void:
 	verb_selector.select(0)
 	verb_selector.item_selected.connect(_on_verb_selected)
 	reset_btn.pressed.connect(_on_reset_pressed)
+	back_btn.pressed.connect(_go_to_mainMenu)
 	_build_round()
 
 func _on_verb_selected(_idx: int) -> void:
@@ -100,6 +102,9 @@ func _on_verb_selected(_idx: int) -> void:
 
 func _on_reset_pressed() -> void:
 	_build_round()
+	
+func _go_to_mainMenu() -> void:
+	get_tree().change_scene_to_file("res://mainMenu.tscn")
 
 func _build_round() -> void:
 	# Сброс

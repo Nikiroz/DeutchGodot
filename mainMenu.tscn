@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://l4xfiumh2oq0"]
+
+[ext_resource type="Script" uid="uid://7dnf7tnectlg" path="res://mainmenu.gd" id="1_wut1r"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 384.0
+offset_bottom = 718.0
+script = ExtResource("1_wut1r")
+
+[node name="SeinButton" type="Button" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 21.0
+offset_top = 21.0
+offset_right = 133.0
+offset_bottom = 52.0
+text = "Sein & Haben"

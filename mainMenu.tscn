@@ -1,21 +1,174 @@
-[gd_scene load_steps=2 format=3 uid="uid://l4xfiumh2oq0"]
+[gd_scene load_steps=5 format=3 uid="uid://l4xfiumh2oq0"]
 
 [ext_resource type="Script" uid="uid://7dnf7tnectlg" path="res://mainmenu.gd" id="1_wut1r"]
+[ext_resource type="Theme" uid="uid://bcceo0pa48jbb" path="res://Theme.tres" id="2_83s16"]
+[ext_resource type="Texture2D" uid="uid://bshrllljoi5ek" path="res://icon.svg" id="4_wc2lj"]
 
-[node name="MainMenu" type="Node2D"]
+[sub_resource type="Theme" id="Theme_w7d22"]
 
-[node name="Control" type="Control" parent="."]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 384.0
-offset_bottom = 718.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_wut1r")
+metadata/_edit_horizontal_guides_ = [300.0, 315.0, 703.0, 718.0, 15.0]
+metadata/_edit_vertical_guides_ = [15.0, 369.0]
 
-[node name="SeinButton" type="Button" parent="Control"]
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_83s16")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 296)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BG/VBoxContainer3/VBoxContainer"]
+custom_minimum_size = Vector2(0, 115)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="H2" type="Label" parent="BG/VBoxContainer3/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_83s16")
+theme_type_variation = &"HeaderMedium"
+text = "Willkommen bei den"
+
+[node name="H1" type="Label" parent="BG/VBoxContainer3/VBoxContainer/MarginContainer/H2"]
+layout_mode = 1
+offset_top = 25.0
+offset_right = 300.0
+offset_bottom = 71.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_83s16")
+theme_type_variation = &"HeaderLarge"
+text = "DEUTSCHÜBUNGEN"
+
+[node name="PanelContainer" type="PanelContainer" parent="BG/VBoxContainer3/VBoxContainer"]
+clip_children = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_83s16")
+theme_type_variation = &"Avatar"
+
+[node name="TextureRect2" type="TextureRect" parent="BG/VBoxContainer3/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_wc2lj")
+
+[node name="Label" type="Label" parent="BG/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_w7d22")
+theme_type_variation = &"Score"
+text = "10000"
+
+[node name="MarginContainer" type="MarginContainer" parent="BG/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_83s16")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BG/VBoxContainer3/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="SeinButton" type="Button" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 21.0
-offset_top = 21.0
-offset_right = 133.0
-offset_bottom = 52.0
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_83s16")
 text = "Sein & Haben"
+
+[node name="Button" type="Button" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "text"
+
+[node name="Button2" type="Button" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "text"
+
+[node name="Button3" type="Button" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "text"
+
+[node name="Button4" type="Button" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "text"
+
+[node name="Button5" type="Button" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "text"
+
+[node name="Button6" type="Button" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "text"
+
+[node name="Button7" type="Button" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "text"
+
+[node name="Button8" type="Button" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "text"
+
+[node name="Button9" type="Button" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "text"
+
+[node name="Button10" type="Button" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "text"
+
+[node name="Button11" type="Button" parent="BG/VBoxContainer3/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "text"

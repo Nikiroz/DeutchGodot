@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bcceo0pa48jbb"]
+
+[ext_resource type="FontFile" uid="uid://co6hm242fhbwy" path="res://Fonts/RobotoCondensed-Bold.ttf" id="1_yd3fu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23v3e"]
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd3fu"]
+bg_color = Color(0.94902, 0.94902, 0.94902, 1)
+
+[resource]
+Avatar/base_type = &"PanelContainer"
+Avatar/styles/panel = SubResource("StyleBoxFlat_23v3e")
+Button/font_sizes/font_size = 20
+HeaderLarge/colors/font_color = Color(0, 0, 0, 1)
+HeaderLarge/font_sizes/font_size = 38
+HeaderLarge/fonts/font = ExtResource("1_yd3fu")
+HeaderMedium/colors/font_color = Color(0, 0, 0, 1)
+HeaderMedium/font_sizes/font_size = 18
+Panel/styles/panel = SubResource("StyleBoxFlat_yd3fu")
+Score/base_type = &"Label"
+Score/colors/font_color = Color(0, 0, 0, 1)
+Score/font_sizes/font_size = 22
+Score/fonts/font = ExtResource("1_yd3fu")

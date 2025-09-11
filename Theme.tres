@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bcceo0pa48jbb"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bcceo0pa48jbb"]
 
 [ext_resource type="FontFile" uid="uid://co6hm242fhbwy" path="res://Fonts/RobotoCondensed-Bold.ttf" id="1_yd3fu"]
+[ext_resource type="Texture2D" uid="uid://jg3s0655isr4" path="res://level.svg" id="2_23v3e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23v3e"]
 corner_radius_top_left = 100
@@ -8,18 +9,36 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1aya"]
+bg_color = Color(0.94902, 0.94902, 0.94902, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1aya"]
+texture = ExtResource("2_23v3e")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4jqe"]
+bg_color = Color(0.419608, 0.662745, 0.537255, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd3fu"]
 bg_color = Color(0.94902, 0.94902, 0.94902, 1)
 
 [resource]
 Avatar/base_type = &"PanelContainer"
 Avatar/styles/panel = SubResource("StyleBoxFlat_23v3e")
+Bg/base_type = &"Panel"
+Bg/styles/panel = SubResource("StyleBoxFlat_k1aya")
 Button/font_sizes/font_size = 20
 HeaderLarge/colors/font_color = Color(0, 0, 0, 1)
 HeaderLarge/font_sizes/font_size = 38
 HeaderLarge/fonts/font = ExtResource("1_yd3fu")
 HeaderMedium/colors/font_color = Color(0, 0, 0, 1)
 HeaderMedium/font_sizes/font_size = 18
+Level/base_type = &"Panel"
+Level/styles/panel = SubResource("StyleBoxTexture_k1aya")
+LevelScore/base_type = &"Label"
+MainBg/base_type = &"Panel"
+MainBg/styles/panel = SubResource("StyleBoxFlat_j4jqe")
 Panel/styles/panel = SubResource("StyleBoxFlat_yd3fu")
 Score/base_type = &"Label"
 Score/colors/font_color = Color(0, 0, 0, 1)

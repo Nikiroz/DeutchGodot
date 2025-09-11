@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=8 format=3 uid="uid://bcceo0pa48jbb"]
 
 [ext_resource type="FontFile" uid="uid://co6hm242fhbwy" path="res://Fonts/RobotoCondensed-Bold.ttf" id="1_yd3fu"]
-[ext_resource type="Texture2D" uid="uid://jg3s0655isr4" path="res://level.svg" id="2_23v3e"]
+[ext_resource type="Texture2D" uid="uid://jg3s0655isr4" path="res://Images/s_level.svg" id="2_23v3e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23v3e"]
 corner_radius_top_left = 100

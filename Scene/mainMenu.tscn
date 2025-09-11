@@ -1,0 +1,428 @@
+[gd_scene load_steps=11 format=3 uid="uid://l4xfiumh2oq0"]
+
+[ext_resource type="Script" uid="uid://7dnf7tnectlg" path="res://Script/mainmenu.gd" id="1_pc67k"]
+[ext_resource type="Theme" uid="uid://bcceo0pa48jbb" path="res://Theme/Theme.tres" id="2_i8jft"]
+[ext_resource type="Texture2D" uid="uid://rq4w4fod56rk" path="res://Images/s_line.svg" id="3_hok7p"]
+[ext_resource type="Texture2D" uid="uid://cefd66tu0n6l6" path="res://Images/s_tree.svg" id="4_rnrc5"]
+[ext_resource type="Texture2D" uid="uid://bshrllljoi5ek" path="res://Images/s_icon.svg" id="5_nyllg"]
+[ext_resource type="Script" uid="uid://drvbvff5r3ixy" path="res://Script/sein.gd" id="6_hok7p"]
+[ext_resource type="Theme" uid="uid://8ny1dhhq5cek" path="res://Theme/node_2d.tres" id="6_i8jft"]
+[ext_resource type="StyleBox" uid="uid://bjmnbxe5x3i73" path="res://Theme/fade.tres" id="6_rnrc5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7d22"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wc2lj"]
+texture = ExtResource("5_nyllg")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pc67k")
+metadata/_edit_horizontal_guides_ = [300.0, 333.0, 703.0, 718.0, 15.0, 202.0]
+metadata/_edit_vertical_guides_ = [15.0, 369.0]
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_i8jft")
+theme_type_variation = &"MainBg"
+
+[node name="Panel" type="Panel" parent="BG"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -385.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Container" type="VBoxContainer" parent="BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Up" type="Panel" parent="BG/Container"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 296)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_w7d22")
+
+[node name="TextureRect" type="TextureRect" parent="BG/Container/Up"]
+layout_mode = 0
+offset_top = 175.0
+offset_right = 384.0
+offset_bottom = 284.0
+texture = ExtResource("3_hok7p")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="BG/Container/Up"]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 106.0
+offset_right = 467.0
+offset_bottom = 419.0
+scale = Vector2(0.440004, 0.440004)
+texture = ExtResource("4_rnrc5")
+
+[node name="TextureRect2" type="TextureRect" parent="BG/Container/Up"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 100.0
+offset_right = 213.0
+offset_bottom = 413.0
+scale = Vector2(0.279996, 0.279996)
+texture = ExtResource("4_rnrc5")
+
+[node name="Welcome" type="VBoxContainer" parent="BG/Container/Up"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 315.0
+offset_bottom = 91.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="H2" type="Label" parent="BG/Container/Up/Welcome"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_i8jft")
+theme_type_variation = &"HeaderMedium"
+text = "Willkommen bei den"
+
+[node name="H1" type="Label" parent="BG/Container/Up/Welcome"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_i8jft")
+theme_type_variation = &"HeaderLarge"
+text = "DEUTSCHÜBUNGEN"
+
+[node name="Avatar" type="VBoxContainer" parent="BG/Container/Up"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+offset_right = 384.0
+offset_bottom = 296.0
+
+[node name="AvatarContainer" type="MarginContainer" parent="BG/Container/Up/Avatar"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/Container/Up/Avatar/AvatarContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="BG/Container/Up/Avatar/AvatarContainer/VBoxContainer"]
+clip_children = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_i8jft")
+theme_type_variation = &"Avatar"
+
+[node name="AvatarPanel" type="Panel" parent="BG/Container/Up/Avatar/AvatarContainer/VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wc2lj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BG/Container/Up/Avatar/AvatarContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="BG/Container/Up/Avatar/AvatarContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="BG/Container/Up/Avatar/AvatarContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 5
+
+[node name="PointCount" type="ProgressBar" parent="BG/Container/Up/Avatar/AvatarContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+step = 1.0
+value = 1.0
+
+[node name="Panel" type="Panel" parent="BG/Container/Up/Avatar/AvatarContainer/VBoxContainer/HBoxContainer/MarginContainer/PointCount"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+offset_left = -42.0
+offset_top = -11.0
+offset_right = 8.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_i8jft")
+theme_type_variation = &"Level"
+
+[node name="LevelCount" type="Label" parent="BG/Container/Up/Avatar/AvatarContainer/VBoxContainer/HBoxContainer/MarginContainer/PointCount/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -12.0
+offset_right = 5.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+
+[node name="Control" type="Control" parent="BG/Container/Up/Avatar/AvatarContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Down" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 300.0
+offset_right = 384.0
+offset_bottom = 718.0
+size_flags_vertical = 3
+theme = ExtResource("2_i8jft")
+theme_type_variation = &"Bg"
+
+[node name="MainMenu" type="MarginContainer" parent="Down"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = ExtResource("2_i8jft")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Down/MainMenu"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Down/MainMenu/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Down/MainMenu/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="SeinButton" type="Button" parent="Down/MainMenu/ScrollContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_i8jft")
+text = "Sein & Haben"
+
+[node name="Button" type="Button" parent="Down/MainMenu/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+text = "text"
+
+[node name="Button2" type="Button" parent="Down/MainMenu/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+text = "text"
+
+[node name="Button3" type="Button" parent="Down/MainMenu/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+text = "text"
+
+[node name="Button4" type="Button" parent="Down/MainMenu/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+text = "text"
+
+[node name="Button5" type="Button" parent="Down/MainMenu/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+text = "text"
+
+[node name="Button6" type="Button" parent="Down/MainMenu/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+text = "text"
+
+[node name="Button7" type="Button" parent="Down/MainMenu/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+text = "text"
+
+[node name="Button8" type="Button" parent="Down/MainMenu/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+text = "text"
+
+[node name="Button9" type="Button" parent="Down/MainMenu/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+text = "text"
+
+[node name="Fade" type="MarginContainer" parent="Down"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 33
+
+[node name="FadePanel" type="Panel" parent="Down/Fade"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = ExtResource("6_rnrc5")
+
+[node name="Sein" type="MarginContainer" parent="Down"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("6_hok7p")
+
+[node name="FeedbackLabel" type="Label" parent="Down/Sein"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("6_i8jft")
+theme_type_variation = &"HeaderLarge"
+text = "\"\""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Down/Sein"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Down/Sein/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Down/Sein/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="Down/Sein/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Down/Sein/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayArea" type="HBoxContainer" parent="Down/Sein/VBoxContainer/VBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Down/Sein/VBoxContainer/VBoxContainer/VBoxContainer2/PlayArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Down/Sein/VBoxContainer/VBoxContainer/VBoxContainer2/PlayArea/VBoxContainer"]
+layout_mode = 2
+text = "Местоимения"
+
+[node name="Pronouns" type="GridContainer" parent="Down/Sein/VBoxContainer/VBoxContainer/VBoxContainer2/PlayArea/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Down/Sein/VBoxContainer/VBoxContainer/VBoxContainer2/PlayArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Down/Sein/VBoxContainer/VBoxContainer/VBoxContainer2/PlayArea/VBoxContainer2"]
+layout_mode = 2
+text = "Формы"
+
+[node name="Forms" type="GridContainer" parent="Down/Sein/VBoxContainer/VBoxContainer/VBoxContainer2/PlayArea/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="Down/Sein/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TopBar" type="HBoxContainer" parent="Down/Sein/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Down/Sein/VBoxContainer/VBoxContainer/TopBar"]
+layout_mode = 2
+text = "Глагол"
+
+[node name="VerbSelector" type="OptionButton" parent="Down/Sein/VBoxContainer/VBoxContainer/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "sein"
+popup/item_0/id = 0
+popup/item_1/text = "haben"
+popup/item_1/id = 1
+
+[node name="ResetButton" type="Button" parent="Down/Sein/VBoxContainer/VBoxContainer/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Сброс"
+
+[node name="ScoreLabel" type="Label" parent="Down/Sein/VBoxContainer/VBoxContainer/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0/9"
+
+[node name="Control2" type="Control" parent="Down/Sein/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackButton" type="Button" parent="Down/Sein/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"
+
+[node name="Control3" type="Control" parent="Down/Sein/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true

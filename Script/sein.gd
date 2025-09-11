@@ -1,5 +1,5 @@
 # Quiz.gd — Godot 4.x (GDScript)
-extends Control
+extends "res://Script/mainmenu.gd"
 
 @onready var verb_selector: OptionButton = %VerbSelector
 @onready var reset_btn: Button = %ResetButton
@@ -104,7 +104,7 @@ func _on_reset_pressed() -> void:
 	_build_round()
 	
 func _go_to_mainMenu() -> void:
-	get_tree().change_scene_to_file("res://mainMenu.tscn")
+	_hide_welcome(sein_block);
 
 func _build_round() -> void:
 	# Сброс
